@@ -5,6 +5,8 @@ __pycache__/
 # Secrets (but keep .env.example)
 .env
 .env.*
+!.env.example
+
 
 # Logs
 *.log
