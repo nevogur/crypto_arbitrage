@@ -1,0 +1,34 @@
+
+# ===== Bot settings =====
+strategy: triangular
+exchanges:
+  - name: binance
+    symbols:
+      - BTC/USDT
+      - ETH/USDT
+      - ETH/BTC
+  - name: kucoin
+    symbols:
+      - BTC/USDT
+      - ETH/USDT
+      - ETH/BTC
+
+# ===== Trade settings =====
+trade_amounts:
+  BTC: 0.01
+  ETH: 0.2
+  USDT: 100
+
+min_profit_pct: 0.2    # Minimum profit % to trigger a trade
+max_slippage_pct: 0.05 # Max price difference allowed after detection
+cooldown_seconds: 5    # Wait time before re-trading the same cycle
+
+# ===== Risk management =====
+max_usd_per_trade: 500
+max_open_trades: 2
+
+# ===== Paper trading =====
+paper_mode: true
+
+
+
