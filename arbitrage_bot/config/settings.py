@@ -45,15 +45,20 @@ def _load_env() -> None:
 
 def _load_yaml(path: Path) -> Dict[str, Any]:
     with path.open("r", encoding="utf-8") as f:
+        # load the yaml into a dict or create empty dict if failed
         data = yaml.safe_load(f) or {}
     if not isinstance(data, dict):
         raise ValueError(f"YAML at {path} must be a mapping (dict) at the top level.")
     return data
 
 def _bool_env(key: str, default: bool) -> bool:
+    # check if a parameter is set to true of false
     raw = os.getenv(key)
     if raw is None:
         return default
+    
+    # {1 , true , yes , on} are considerd true also if they are upper case or have spaces before or after
+    # so strip them and then check
     return raw.strip().lower() in {"1", "true", "yes", "on"}
 
 
@@ -148,6 +153,7 @@ def build_settings() -> Settings:
 
 
 
+# tests
 settings = build_settings()
 print(settings)
 

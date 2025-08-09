@@ -12,6 +12,11 @@ exchanges:
       - BTC/USDT
       - ETH/USDT
       - ETH/BTC
+  - name: kraken
+    symbols:
+      - BTC/USDT
+      - ETH/USDT
+      - ETH/BTC
 
 # ===== Trade settings =====
 trade_amounts:
