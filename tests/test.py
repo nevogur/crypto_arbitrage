@@ -19,3 +19,7 @@ btc_eth_price = btc_eth_ticker['last']
 # Print results
 print(f"BTC/USDT price: {btc_usdt_price}")
 print(f"BTC/ETH price: {btc_eth_price}")
+
+
+
+print(123456789)
