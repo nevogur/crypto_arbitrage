@@ -1,4 +1,6 @@
 from dataclasses import dataclass
+from typing import Any , List , Dict
+from strategies.abstract_arbitrage import AbstractArbitrage
 
 
 
@@ -15,11 +17,40 @@ class PriceRecived:
     ask: float
     bid: float
     
+  
     
 """
-class PosslibleArbitrage 
+class PosslibleArbitrage is created when a certain strategy finds an arbitrage 
+is it created in the startegies files
+the subscribes to PossibleArbitrage are the risk analysis files
 
 """
 @dataclass 
 class PossibleArbitrage:
+    strategy: AbstractArbitrage
+    exchanges: List[str]
+    coins: Dict[float]
+    time_stamp: float
+
+
+
+"""
+class ConfirmedArbitrage is created when an arbitrage went through all the risk analysis and was found safe to exacute
+it is created in the risk files
+the subscribers to ConfirmedArbitrage are the execution files
+    
+"""
+
+@dataclass
+class ConfirmedArbitrage:
+    pass
+
+
+
+"""
+class DoneArbitrage is created when an arbitrage has been executed
+
+"""
+@dataclass
+class DoneArbitrage:
     pass
